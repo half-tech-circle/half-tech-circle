@@ -1,47 +1,187 @@
-# Astro Starter Kit: Minimal
+# はーふテックサークル Website
 
-```sh
-npm create astro@latest -- --template minimal
+A comprehensive multilingual website for Half Tech Circle, a technical doujinshi production circle. Built with modern web technologies for optimal performance and SEO.
+
+[![Deploy Status](https://github.com/half-tech-circle/half-tech-circle/actions/workflows/deploy.yml/badge.svg)](https://github.com/half-tech-circle/half-tech-circle/actions/workflows/deploy.yml)
+
+## 🌐 Live Website
+
+**Production**: [https://half-tech-circle.github.io/website/](https://half-tech-circle.github.io/website/)
+
+## ✨ Features
+
+- **🌍 Multilingual**: Complete Japanese/English support
+- **📚 Content Management**: Books, blog posts, member profiles
+- **🎨 Modern Design**: Responsive design with Tailwind CSS
+- **⚡ Performance**: Static site generation with Astro
+- **🔍 SEO Optimized**: Meta tags, sitemap, structured data
+- **📊 Analytics**: Google Analytics 4 integration
+- **🧪 Testing**: Comprehensive E2E testing with Playwright
+- **🚀 CI/CD**: Automatic GitHub Pages deployment
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Astro](https://astro.build) v5.10.0
+- **UI Library**: [React](https://react.dev) v19.1.0
+- **Language**: [TypeScript](https://typescriptlang.org) (strict mode)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com) v4.1.10
+- **Testing**: [Playwright](https://playwright.dev)
+- **Linting**: [ESLint](https://eslint.org) v9
+- **Deployment**: GitHub Pages with Actions
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+
+- npm 9+
+
+### Installation
+```bash
+# Clone repository
+git clone https://github.com/half-tech-circle/half-tech-circle.git
+cd half-tech-circle/website
+
+# Install dependencies
+npm install --legacy-peer-deps
+
+# Start development server
+npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+Visit http://localhost:4321
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Environment Setup
+```bash
+# Copy environment template
+cp .env.example .env
 
-## 🚀 Project Structure
+# Configure Google Analytics (optional)
+# Edit .env and add your GA4 Measurement ID
+PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📁 Project Structure
 
-```text
-/
-├── public/
+```
+website/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/        # Reusable UI components
+│   ├── content/blog/      # Markdown blog posts (ja/en)
+│   ├── data/             # Static data (books, members)
+│   ├── layouts/          # Page layouts
+│   ├── pages/            # Route pages (ja/en)
+│   ├── styles/           # Global CSS
+│   └── types/            # TypeScript definitions
+├── public/               # Static assets
+├── tests/               # E2E tests
+└── .github/workflows/   # CI/CD configuration
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+| Command | Action |
+|---------|--------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run test` | Run E2E tests |
+| `npm run lint` | Run ESLint |
+| `npm run typecheck` | Check TypeScript |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📝 Content Management
 
-## 👀 Want to learn more?
+### Blog Posts
+Create markdown files in `src/content/blog/[lang]/`:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```yaml
+---
+title: "Post Title"
+excerpt: "Brief description"
+publishDate: "2025-01-15"
+author: "Author Name"
+category: "Category"
+tags: ["tag1", "tag2"]
+---
+
+Your markdown content here...
+```
+
+### Books & Members
+Edit data files:
+- `src/data/books.ts` - Technical books
+- `src/data/members.ts` - Circle members
+
+## 🎯 SEO & Performance
+
+- **Lighthouse Score**: 95+ targets for all metrics
+- **Meta Tags**: Complete Open Graph and Twitter Cards
+- **Structured Data**: Schema.org organization markup
+- **Sitemap**: Automatic XML sitemap generation
+- **Robots.txt**: Search engine optimization
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+npm run test
+
+# Run specific test suite
+npm run test tests/homepage.spec.ts
+
+# Run tests with UI
+npm run test -- --ui
+```
+
+Test coverage includes:
+- Homepage functionality
+- Multilingual navigation
+- Books and blog pages
+- Responsive design
+- Accessibility
+
+## 🚀 Deployment
+
+### Automatic (Recommended)
+- Push to `main` branch
+- GitHub Actions builds and deploys automatically
+- Live in 2-5 minutes
+
+### Manual
+- Go to Actions → "Deploy to GitHub Pages" → "Run workflow"
+
+## 📊 Analytics & Monitoring
+
+- **Google Analytics**: Configured via environment variables
+- **Performance**: Lighthouse CI integration
+- **Error Tracking**: Built-in Astro error handling
+- **Build Status**: GitHub Actions badges
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature/amazing-feature`
+3. Commit changes: `git commit -m 'Add amazing feature'`
+4. Push branch: `git push origin feature/amazing-feature`
+5. Open Pull Request
+
+## 📄 Documentation
+
+- [DEPLOYMENT.md](./DEPLOYMENT.md) - Detailed deployment guide
+- [CLAUDE.md](../CLAUDE.md) - Project specifications
+- [Astro Docs](https://docs.astro.build) - Framework documentation
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
+
+## 🌟 Acknowledgments
+
+- **Built with**: [Claude Code](https://claude.ai/code)
+- **Framework**: Astro team for excellent documentation
+- **Community**: Technical doujinshi community for inspiration
+
+---
+
+**Version**: 1.0  
+**Last Updated**: 2025-06-22  
+**Maintainers**: Half Tech Circle

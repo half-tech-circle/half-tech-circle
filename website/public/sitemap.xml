@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://half-tech-circle.github.io/website/</loc>
+    <loc>https://half-tech-circle.github.io/</loc>
     <lastmod>2025-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://half-tech-circle.github.io/website/en/</loc>
+    <loc>https://half-tech-circle.github.io/en/</loc>
     <lastmod>2025-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://half-tech-circle.github.io/website/books/</loc>
+    <loc>https://half-tech-circle.github.io/books/</loc>
     <lastmod>2025-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://half-tech-circle.github.io/website/en/books/</loc>
+    <loc>https://half-tech-circle.github.io/en/books/</loc>
     <lastmod>2025-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://half-tech-circle.github.io/website/blog/</loc>
+    <loc>https://half-tech-circle.github.io/blog/</loc>
     <lastmod>2025-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://half-tech-circle.github.io/website/en/blog/</loc>
+    <loc>https://half-tech-circle.github.io/en/blog/</loc>
     <lastmod>2025-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://half-tech-circle.github.io/website/members/</loc>
+    <loc>https://half-tech-circle.github.io/members/</loc>
     <lastmod>2025-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://half-tech-circle.github.io/website/en/members/</loc>
+    <loc>https://half-tech-circle.github.io/en/members/</loc>
     <lastmod>2025-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://half-tech-circle.github.io/website/contact/</loc>
+    <loc>https://half-tech-circle.github.io/contact/</loc>
     <lastmod>2025-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://half-tech-circle.github.io/website/en/contact/</loc>
+    <loc>https://half-tech-circle.github.io/en/contact/</loc>
     <lastmod>2025-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

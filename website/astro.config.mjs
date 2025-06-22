@@ -8,7 +8,7 @@ import astroI18next from 'astro-i18next';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://half-tech-circle.github.io',
-  base: process.env.NODE_ENV === 'production' ? '/half-tech-circle' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/' : '/',
   integrations: [react(), astroI18next()],
 
   vite: {

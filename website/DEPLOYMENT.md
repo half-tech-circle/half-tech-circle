@@ -56,7 +56,7 @@ The website automatically deploys when you push to the `main` branch:
    - The workflow will build and deploy automatically
 
 2. **Access Your Site**
-   - URL: `https://half-tech-circle.github.io/website/`
+   - URL: `https://half-tech-circle.github.io/`
    - Updates reflect within 2-5 minutes after push
 
 ### Manual Deployment

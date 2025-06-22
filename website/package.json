@@ -1,0 +1,37 @@
+{
+  "name": "website",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "eslint . --ext .ts,.tsx,.astro",
+    "test": "playwright test",
+    "lighthouse": "node scripts/lighthouse-test.js"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "@tailwindcss/vite": "^4.1.10",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "astro": "^5.10.0",
+    "gray-matter": "^4.0.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.10"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.53.1",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
+    "astro-i18next": "^1.0.0-beta.21",
+    "eslint": "^9.29.0",
+    "i18next": "^25.2.1",
+    "i18next-fs-backend": "^2.6.0",
+    "lighthouse": "^12.6.1",
+    "typescript": "^5.8.3"
+  }
+}

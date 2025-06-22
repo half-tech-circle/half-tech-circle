@@ -1,0 +1,33 @@
+---
+const currentPath = Astro.url.pathname;
+const isEnglish = currentPath.startsWith('/en');
+
+// Remove /en prefix to get the base path
+const basePath = isEnglish ? currentPath.replace(/^\/en/, '') || '/' : currentPath;
+
+const jaUrl = basePath;
+const enUrl = basePath === '/' ? '/en' : `/en${basePath}`;
+---
+
+<div class="flex space-x-2">
+  <a 
+    href={jaUrl}
+    class={`px-3 py-1 text-sm rounded-md transition-colors ${
+      !isEnglish 
+        ? 'bg-blue-600 text-white' 
+        : 'text-gray-700 hover:bg-gray-100'
+    }`}
+  >
+    日本語
+  </a>
+  <a 
+    href={enUrl}
+    class={`px-3 py-1 text-sm rounded-md transition-colors ${
+      isEnglish 
+        ? 'bg-blue-600 text-white' 
+        : 'text-gray-700 hover:bg-gray-100'
+    }`}
+  >
+    English
+  </a>
+</div>

@@ -1,0 +1,98 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Half Tech Circle":
+    - /url: /en
+  - navigation:
+    - link "Home":
+      - /url: /en
+    - link "Books":
+      - /url: /en/books
+    - link "Members":
+      - /url: /en/members
+    - link "Blog":
+      - /url: /en/blog
+    - link "Contact":
+      - /url: /en/contact
+  - link "日本語":
+    - /url: /
+  - link "English":
+    - /url: /en
+- main:
+  - heading "Half Tech Circle" [level=1]
+  - paragraph: Technical Doujinshi Production Circle
+  - paragraph: We are active in technical fields such as programming, web development, and AI, and participate in events like Gijutsu-Shoten and Technical Book Fair.
+  - link "View Technical Books":
+    - /url: /en/books
+  - link "Contact Us":
+    - /url: /en/contact
+  - heading "About the Circle" [level=2]
+  - paragraph: We aim to share technical knowledge and contribute to the development of the engineering community.
+  - img
+  - heading "Technical Book Production" [level=3]
+  - paragraph: We produce practical technical books on programming and web development.
+  - img
+  - heading "Event Participation" [level=3]
+  - paragraph: We actively participate in events such as Gijutsu-Shoten and Technical Book Fair.
+  - img
+  - heading "Global Expansion" [level=3]
+  - paragraph: We disseminate technical information to engineers domestically and internationally, expanding our global activities.
+  - heading "Latest News" [level=2]
+  - paragraph: Stay updated with our latest technical books and event information.
+  - article:
+    - text: Technical Books
+    - heading "New Technical Book Announcement" [level=3]
+    - paragraph: We are currently working on a technical book covering the latest web development technologies.
+    - link "View Details →":
+      - /url: /en/books
+  - article:
+    - text: Event
+    - heading "Gijutsu-Shoten Participation" [level=3]
+    - paragraph: We are planning to participate in the next Gijutsu-Shoten event.
+    - link "View Details →":
+      - /url: /en/blog
+  - article:
+    - text: Blog
+    - heading "Technical Articles Updated" [level=3]
+    - paragraph: We have published new articles about the latest technology trends.
+    - link "View Details →":
+      - /url: /en/blog
+- contentinfo:
+  - heading "はーふテックサークル" [level=3]
+  - paragraph: 技術同人誌制作サークルです。プログラミング、ウェブ開発、AIなどの技術分野で活動し、 技術書典や技術書博覧会などのイベントに参加しています。
+  - link "Twitter":
+    - /url: "#"
+    - text: Twitter
+    - img
+  - link "GitHub":
+    - /url: "#"
+    - text: GitHub
+    - img
+  - heading "クイックリンク" [level=3]
+  - list:
+    - listitem:
+      - link "技術書":
+        - /url: /books
+    - listitem:
+      - link "メンバー":
+        - /url: /members
+    - listitem:
+      - link "ブログ":
+        - /url: /blog
+    - listitem:
+      - link "お問い合わせ":
+        - /url: /contact
+  - heading "参加イベント" [level=3]
+  - list:
+    - listitem:
+      - link "技術書典":
+        - /url: "#"
+    - listitem:
+      - link "技術書博覧会":
+        - /url: "#"
+    - listitem:
+      - link "その他のイベント":
+        - /url: "#"
+  - paragraph: © 2025 はーふテックサークル. All rights reserved.
+```

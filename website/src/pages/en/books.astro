@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { books } from '../../data/books';
+
+const publishedBooks = books.filter(book => book.status === 'published');
+const upcomingBooks = books.filter(book => book.status === 'coming-soon');
+---
+
+<BaseLayout title="Books - Half Tech Circle" description="Technical books produced by Half Tech Circle">
+  <Header />
+  
+  <main class="py-16 bg-gray-50 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Page Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Technical Books</h1>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Discover technical books produced by Half Tech Circle. Our practical content helps engineers enhance their skills and knowledge.
+        </p>
+      </div>
+
+      <!-- Published Books -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold text-gray-900 mb-8">Available Books</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {publishedBooks.map((book) => (
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group">
+              <div class="aspect-[3/4] bg-gray-200 relative overflow-hidden">
+                <img
+                  src={book.cover}
+                  alt={book.title.en}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div class="absolute top-4 left-4">
+                  <span class="bg-green-600 text-white px-3 py-1 text-sm font-semibold rounded-full">
+                    Available
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                  {book.title.en}
+                </h3>
+                <p class="text-gray-600 mb-4 line-clamp-3">
+                  {book.description.en}
+                </p>
+                <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                  <span>{book.pages} pages</span>
+                  <span>{new Date(book.publishDate).toLocaleDateString('en-US')}</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="text-sm">
+                    {book.price.physical && (
+                      <div class="text-gray-900">
+                        Physical: ¥{book.price.physical.toLocaleString()}
+                      </div>
+                    )}
+                    {book.price.digital && (
+                      <div class="text-gray-600">
+                        Digital: ¥{book.price.digital.toLocaleString()}
+                      </div>
+                    )}
+                  </div>
+                  <a
+                    href={`/en/books/${book.id}`}
+                    class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
+                  >
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- Upcoming Books -->
+      {upcomingBooks.length > 0 && (
+        <section>
+          <h2 class="text-2xl font-bold text-gray-900 mb-8">Upcoming Books</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {upcomingBooks.map((book) => (
+              <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group">
+                <div class="aspect-[3/4] bg-gray-200 relative overflow-hidden">
+                  <img
+                    src={book.cover}
+                    alt={book.title.en}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <div class="absolute top-4 left-4">
+                    <span class="bg-orange-600 text-white px-3 py-1 text-sm font-semibold rounded-full">
+                      Coming Soon
+                    </span>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    {book.title.en}
+                  </h3>
+                  <p class="text-gray-600 mb-4 line-clamp-3">
+                    {book.description.en}
+                  </p>
+                  <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                    <span>Est. {book.pages} pages</span>
+                    <span>Release: {new Date(book.publishDate).toLocaleDateString('en-US')}</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="text-sm">
+                      {book.price.physical && (
+                        <div class="text-gray-900">
+                          Est. Price: ¥{book.price.physical.toLocaleString()}+
+                        </div>
+                      )}
+                    </div>
+                    <a
+                      href={`/en/books/${book.id}`}
+                      class="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors"
+                    >
+                      View Details
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Categories -->
+      <section class="mt-16 bg-white rounded-lg p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Categories</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {Array.from(new Set(books.map(book => book.category))).map((category) => (
+            <a
+              href={`/en/books?category=${encodeURIComponent(category)}`}
+              class="bg-gray-100 hover:bg-blue-100 text-gray-800 hover:text-blue-800 px-4 py-3 rounded-lg text-center transition-colors"
+            >
+              {category}
+            </a>
+          ))}
+        </div>
+      </section>
+    </div>
+  </main>
+  
+  <Footer />
+</BaseLayout>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

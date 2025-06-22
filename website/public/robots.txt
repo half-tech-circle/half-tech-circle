@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://half-tech-circle.github.io/website/sitemap.xml

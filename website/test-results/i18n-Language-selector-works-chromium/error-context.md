@@ -1,0 +1,98 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - link "はーふテックサークル":
+    - /url: /
+  - navigation:
+    - link "ホーム":
+      - /url: /
+    - link "技術書":
+      - /url: /books
+    - link "メンバー":
+      - /url: /members
+    - link "ブログ":
+      - /url: /blog
+    - link "お問い合わせ":
+      - /url: /contact
+  - link "日本語":
+    - /url: /
+  - link "English":
+    - /url: /en
+- main:
+  - heading "はーふテックサークル" [level=1]
+  - paragraph: 技術同人誌制作サークル
+  - paragraph: プログラミング、ウェブ開発、AIなどの技術分野で活動し、 技術書典や技術書博覧会などのイベントに参加しています。
+  - link "技術書を見る":
+    - /url: /books
+  - link "お問い合わせ":
+    - /url: /contact
+  - heading "サークルについて" [level=2]
+  - paragraph: 技術の知識を共有し、エンジニアコミュニティの発展に貢献することを目指しています。
+  - img
+  - heading "技術書制作" [level=3]
+  - paragraph: プログラミングやウェブ開発に関する実践的な技術書を制作しています。
+  - img
+  - heading "イベント参加" [level=3]
+  - paragraph: 技術書典や技術書博覧会などのイベントに積極的に参加しています。
+  - img
+  - heading "国際展開" [level=3]
+  - paragraph: 国内外のエンジニアに向けて技術情報を発信し、グローバルな活動を展開しています。
+  - heading "最新情報" [level=2]
+  - paragraph: 最新の技術書やイベント情報をお届けします。
+  - article:
+    - text: 技術書
+    - heading "新刊技術書のお知らせ" [level=3]
+    - paragraph: 最新のウェブ開発技術について解説した技術書を制作中です。
+    - link "詳細を見る →":
+      - /url: /books
+  - article:
+    - text: イベント
+    - heading "技術書典参加予定" [level=3]
+    - paragraph: 次回の技術書典への参加を予定しています。
+    - link "詳細を見る →":
+      - /url: /blog
+  - article:
+    - text: ブログ
+    - heading "技術記事を更新" [level=3]
+    - paragraph: 最新の技術トレンドについての記事を公開しました。
+    - link "詳細を見る →":
+      - /url: /blog
+- contentinfo:
+  - heading "はーふテックサークル" [level=3]
+  - paragraph: 技術同人誌制作サークルです。プログラミング、ウェブ開発、AIなどの技術分野で活動し、 技術書典や技術書博覧会などのイベントに参加しています。
+  - link "Twitter":
+    - /url: "#"
+    - text: Twitter
+    - img
+  - link "GitHub":
+    - /url: "#"
+    - text: GitHub
+    - img
+  - heading "クイックリンク" [level=3]
+  - list:
+    - listitem:
+      - link "技術書":
+        - /url: /books
+    - listitem:
+      - link "メンバー":
+        - /url: /members
+    - listitem:
+      - link "ブログ":
+        - /url: /blog
+    - listitem:
+      - link "お問い合わせ":
+        - /url: /contact
+  - heading "参加イベント" [level=3]
+  - list:
+    - listitem:
+      - link "技術書典":
+        - /url: "#"
+    - listitem:
+      - link "技術書博覧会":
+        - /url: "#"
+    - listitem:
+      - link "その他のイベント":
+        - /url: "#"
+  - paragraph: © 2025 はーふテックサークル. All rights reserved.
+```

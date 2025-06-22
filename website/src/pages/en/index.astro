@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="Half Tech Circle" description="Technical doujinshi production circle">
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-purple-700 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Half Tech Circle
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-blue-100">
+            Technical Doujinshi Production Circle
+          </p>
+          <p class="text-lg mb-8 max-w-3xl mx-auto text-blue-50">
+            We are active in technical fields such as programming, web development, and AI,<br>
+            and participate in events like Gijutsu-Shoten and Technical Book Fair.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/en/books" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+              View Technical Books
+            </a>
+            <a href="/en/contact" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            About the Circle
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            We aim to share technical knowledge and contribute to the development of the engineering community.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.832 18.477 19.246 18 17.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Technical Book Production</h3>
+            <p class="text-gray-600">
+              We produce practical technical books on programming and web development.
+            </p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Event Participation</h3>
+            <p class="text-gray-600">
+              We actively participate in events such as Gijutsu-Shoten and Technical Book Fair.
+            </p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Global Expansion</h3>
+            <p class="text-gray-600">
+              We disseminate technical information to engineers domestically and internationally, expanding our global activities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Latest News
+          </h2>
+          <p class="text-lg text-gray-600">
+            Stay updated with our latest technical books and event information.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <article class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+            <div class="p-6">
+              <div class="text-sm text-blue-600 font-semibold mb-2">Technical Books</div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                New Technical Book Announcement
+              </h3>
+              <p class="text-gray-600 mb-4">
+                We are currently working on a technical book covering the latest web development technologies.
+              </p>
+              <a href="/en/books" class="text-blue-600 hover:text-blue-800 font-medium">
+                View Details →
+              </a>
+            </div>
+          </article>
+          
+          <article class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+            <div class="p-6">
+              <div class="text-sm text-green-600 font-semibold mb-2">Event</div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                Gijutsu-Shoten Participation
+              </h3>
+              <p class="text-gray-600 mb-4">
+                We are planning to participate in the next Gijutsu-Shoten event.
+              </p>
+              <a href="/en/blog" class="text-blue-600 hover:text-blue-800 font-medium">
+                View Details →
+              </a>
+            </div>
+          </article>
+          
+          <article class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+            <div class="p-6">
+              <div class="text-sm text-purple-600 font-semibold mb-2">Blog</div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                Technical Articles Updated
+              </h3>
+              <p class="text-gray-600 mb-4">
+                We have published new articles about the latest technology trends.
+              </p>
+              <a href="/en/blog" class="text-blue-600 hover:text-blue-800 font-medium">
+                View Details →
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</BaseLayout>

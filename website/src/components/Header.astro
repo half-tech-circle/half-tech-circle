@@ -1,0 +1,93 @@
+---
+import LanguageSelector from './LanguageSelector.astro';
+
+const currentPath = Astro.url.pathname;
+const isEnglish = currentPath.startsWith('/en');
+const baseUrl = isEnglish ? '/en' : '';
+
+const navItems = {
+  ja: {
+    home: 'ホーム',
+    books: '技術書',
+    members: 'メンバー',
+    blog: 'ブログ',
+    contact: 'お問い合わせ'
+  },
+  en: {
+    home: 'Home',
+    books: 'Books',
+    members: 'Members',
+    blog: 'Blog',
+    contact: 'Contact'
+  }
+};
+
+const nav = navItems[isEnglish ? 'en' : 'ja'];
+const siteName = isEnglish ? 'Half Tech Circle' : 'はーふテックサークル';
+---
+
+<header class="bg-white shadow-sm border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href={baseUrl || '/'} class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+          {siteName}
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href={baseUrl || '/'} class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+          {nav.home}
+        </a>
+        <a href={`${baseUrl}/books`} class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+          {nav.books}
+        </a>
+        <a href={`${baseUrl}/members`} class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+          {nav.members}
+        </a>
+        <a href={`${baseUrl}/blog`} class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+          {nav.blog}
+        </a>
+        <a href={`${baseUrl}/contact`} class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+          {nav.contact}
+        </a>
+      </nav>
+
+      <!-- Language Selector -->
+      <div class="flex items-center space-x-4">
+        <LanguageSelector />
+        
+        <!-- Mobile menu button -->
+        <button type="button" class="md:hidden p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <span class="sr-only">メニューを開く</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="md:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href={baseUrl || '/'} class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+          {nav.home}
+        </a>
+        <a href={`${baseUrl}/books`} class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+          {nav.books}
+        </a>
+        <a href={`${baseUrl}/members`} class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+          {nav.members}
+        </a>
+        <a href={`${baseUrl}/blog`} class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+          {nav.blog}
+        </a>
+        <a href={`${baseUrl}/contact`} class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+          {nav.contact}
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

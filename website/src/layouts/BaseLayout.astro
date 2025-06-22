@@ -1,0 +1,61 @@
+---
+import '../styles/global.css';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "技術同人誌制作サークル" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Half Tech Circle" />
+    <meta name="keywords" content="技術書, 同人誌, プログラミング, ウェブ開発, AI, 技術書典" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:site_name" content="はーふテックサークル" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "はーふテックサークル",
+        "alternateName": "Half Tech Circle",
+        "description": "技術同人誌制作サークル",
+        "url": "https://half-tech-circle.github.io",
+        "sameAs": [
+          "https://twitter.com/half_tech_circle",
+          "https://github.com/half-tech-circle"
+        ]
+      }
+    </script>
+    
+    <title>{title}</title>
+    <GoogleAnalytics />
+  </head>
+  <body class="min-h-screen bg-gray-50 text-gray-900">
+    <slot />
+  </body>
+</html>

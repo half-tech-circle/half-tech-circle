@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getAllBlogPosts, getCategories, getTags } from '../../data/blog';
+
+const posts = getAllBlogPosts('en');
+const categories = getCategories('en');
+const tags = getTags('en');
+
+const formatDate = (dateString: string) => {
+  return new Date(dateString).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+---
+
+<BaseLayout title="Blog - Half Tech Circle" description="Half Tech Circle's technical blog. Stay updated with the latest tech insights and project progress.">
+  <Header />
+  
+  <main class="py-16 bg-gray-50 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Page Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Blog</h1>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Stay updated with the latest technology insights, project progress, and learning experiences.
+        </p>
+      </div>
+
+      <div class="lg:grid lg:grid-cols-4 lg:gap-8">
+        <!-- Main Content -->
+        <div class="lg:col-span-3">
+          <div class="space-y-8">
+            {posts.map((post) => (
+              <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="md:flex">
+                  {/* Cover Image */}
+                  {post.coverImage && (
+                    <div class="md:flex-shrink-0">
+                      <div class="h-48 w-full md:w-48 bg-gray-200">
+                        <img
+                          src={post.coverImage}
+                          alt={post.title.en}
+                          class="h-full w-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Content */}
+                  <div class="p-6 flex-1">
+                    <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                      <time datetime={post.publishDate}>
+                        {formatDate(post.publishDate)}
+                      </time>
+                      <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                        {post.category}
+                      </span>
+                      {post.type === 'note-link' && (
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs flex items-center">
+                          <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+                          </svg>
+                          note article
+                        </span>
+                      )}
+                      {post.readingTime && (
+                        <span class="text-gray-400">
+                          {post.readingTime} min read
+                        </span>
+                      )}
+                    </div>
+                    
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
+                      {post.type === 'note-link' ? (
+                        <a href={post.noteUrl} target="_blank" rel="noopener noreferrer">
+                          {post.title.en || post.title.ja}
+                        </a>
+                      ) : (
+                        <a href={`/en/blog/${post.slug}`}>
+                          {post.title.en || post.title.ja}
+                        </a>
+                      )}
+                    </h2>
+                    
+                    <p class="text-gray-600 mb-4 line-clamp-3">
+                      {post.excerpt.en || post.excerpt.ja}
+                    </p>
+                    
+                    {/* Tags */}
+                    {post.tags && post.tags.length > 0 && (
+                      <div class="flex flex-wrap gap-2 mb-4">
+                        {post.tags.map((tag) => (
+                          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm text-gray-500">
+                        by {post.author}
+                      </span>
+                      
+                      {post.type === 'note-link' ? (
+                        <a
+                          href={post.noteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="text-blue-600 hover:text-blue-800 font-medium text-sm inline-flex items-center"
+                        >
+                          Read on note
+                          <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+                          </svg>
+                        </a>
+                      ) : (
+                        <a
+                          href={`/en/blog/${post.slug}`}
+                          class="text-blue-600 hover:text-blue-800 font-medium text-sm"
+                        >
+                          Read more →
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          
+          {posts.length === 0 && (
+            <div class="text-center py-12">
+              <p class="text-gray-500 text-lg">No articles yet.</p>
+            </div>
+          )}
+        </div>
+
+        <!-- Sidebar -->
+        <div class="mt-12 lg:mt-0">
+          <div class="space-y-8">
+            <!-- Categories -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="text-lg font-semibold text-gray-900 mb-4">Categories</h3>
+              <div class="space-y-2">
+                {categories.map((category) => (
+                  <a
+                    href={`/en/blog?category=${encodeURIComponent(category)}`}
+                    class="block text-gray-600 hover:text-blue-600 py-1 transition-colors"
+                  >
+                    {category}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <!-- Popular Tags -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="text-lg font-semibold text-gray-900 mb-4">Popular Tags</h3>
+              <div class="flex flex-wrap gap-2">
+                {tags.slice(0, 20).map((tag) => (
+                  <a
+                    href={`/en/blog?tag=${encodeURIComponent(tag)}`}
+                    class="bg-gray-100 hover:bg-blue-100 text-gray-700 hover:text-blue-800 px-3 py-1 rounded-full text-sm transition-colors"
+                  >
+                    #{tag}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <!-- Archive -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="text-lg font-semibold text-gray-900 mb-4">Archive</h3>
+              <div class="space-y-2">
+                <a href="/en/blog?year=2025" class="block text-gray-600 hover:text-blue-600 py-1 transition-colors">
+                  2025
+                </a>
+                <a href="/en/blog?year=2024" class="block text-gray-600 hover:text-blue-600 py-1 transition-colors">
+                  2024
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+</BaseLayout>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

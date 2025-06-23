@@ -1,12 +1,22 @@
 ---
 const currentPath = Astro.url.pathname;
-const isEnglish = currentPath.startsWith('/en');
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, ''); // Remove trailing slash
+const isEnglish = currentPath.includes('/en');
 
-// Remove /en prefix to get the base path
-const basePath = isEnglish ? currentPath.replace(/^\/en/, '') || '/' : currentPath;
+// Extract the page path without base path and language prefix
+let pagePath = currentPath;
+if (pagePath.startsWith(basePath)) {
+  pagePath = pagePath.substring(basePath.length);
+}
+if (pagePath.startsWith('/en')) {
+  pagePath = pagePath.substring(3);
+}
+if (!pagePath) {
+  pagePath = '/';
+}
 
-const jaUrl = basePath;
-const enUrl = basePath === '/' ? '/en' : `/en${basePath}`;
+const jaUrl = basePath + pagePath;
+const enUrl = basePath + '/en' + pagePath;
 ---
 
 <div class="flex space-x-2">

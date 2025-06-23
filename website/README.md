@@ -6,7 +6,7 @@ A comprehensive multilingual website for Half Tech Circle, a technical doujinshi
 
 ## 🌐 Live Website
 
-**Production**: [https://half-tech-circle.github.io/](https://half-tech-circle.github.io/)
+**Production**: [https://half-tech-circle.github.io/half-tech-circle/](https://half-tech-circle.github.io/half-tech-circle/)
 
 ## ✨ Features
 

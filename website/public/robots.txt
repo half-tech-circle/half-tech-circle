@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://half-tech-circle.github.io/sitemap.xml
+Sitemap: https://half-tech-circle.github.io/half-tech-circle/sitemap.xml

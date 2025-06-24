@@ -1,0 +1,63 @@
+{
+  "site": {
+    "title": "Half Tech Circle",
+    "description": "Technical Doujinshi Production Circle"
+  },
+  "nav": {
+    "home": "Home",
+    "books": "Books",
+    "members": "Members",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Half Tech Circle",
+    "subtitle": "Technical Doujinshi Production Circle",
+    "description": "We are active in technical fields such as programming, web development, and AI, and participate in events such as Techbook Festival and Technical Book Expo.",
+    "viewBooks": "View Books",
+    "contact": "Contact Us"
+  },
+  "about": {
+    "title": "About Our Circle",
+    "description": "We aim to share technical knowledge and contribute to the development of the engineering community.",
+    "features": {
+      "books": {
+        "title": "Technical Book Production",
+        "description": "We produce practical technical books on programming and web development."
+      },
+      "events": {
+        "title": "Event Participation",
+        "description": "We actively participate in events such as Techbook Festival and Technical Book Expo."
+      },
+      "global": {
+        "title": "Global Expansion",
+        "description": "We disseminate technical information to engineers both domestically and internationally, expanding our global activities."
+      }
+    }
+  },
+  "news": {
+    "title": "Latest News",
+    "description": "We bring you the latest technical books and event information.",
+    "readMore": "Read More",
+    "items": {
+      "newBook": {
+        "title": "New Technical Book Announcement",
+        "description": "We are currently producing a technical book that explains the latest web development technologies."
+      },
+      "event": {
+        "title": "Planning to Participate in Techbook Festival",
+        "description": "We are planning to participate in the next Techbook Festival."
+      },
+      "blog": {
+        "title": "Technical Articles Updated",
+        "description": "We have published articles about the latest technology trends."
+      }
+    }
+  },
+  "footer": {
+    "description": "We are a technical doujinshi production circle. We are active in technical fields such as programming, web development, and AI, and participate in events such as Techbook Festival and Technical Book Expo.",
+    "quickLinks": "Quick Links",
+    "events": "Events",
+    "copyright": "© 2025 Half Tech Circle. All rights reserved."
+  }
+}
